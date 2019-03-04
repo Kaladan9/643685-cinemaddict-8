@@ -1,5 +1,7 @@
-export default (hasControls, hasDescription) =>
-  `<article 
+import {htmlToDomNode} from './utils';
+
+export default (hasControls, hasDescription) => {
+  const html = `<article 
     class="${hasControls ? `film-card` : `film-card film-card--no-controls`}">
 
     <h3 class="film-card__title">The Assassination Of Jessie James By The Coward Robert Ford</h3>
@@ -25,3 +27,6 @@ export default (hasControls, hasDescription) =>
     </form>` : ``}
     
   </article>`;
+
+  return htmlToDomNode(html);
+};
