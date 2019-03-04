@@ -39,10 +39,13 @@ const switchFilter = (evt) => {
   }
 };
 
-filters.insertBefore(makeFilter(`#all`, `All movies`, 0, true), stats);
-filters.insertBefore(makeFilter(`#watchlist`, `Watchlist`, 23), stats);
-filters.insertBefore(makeFilter(`#history`, `History`, 222), stats);
-filters.insertBefore(makeFilter(`#favorites`, `Favorites`, 5355), stats);
+const filtersFragment = document.createDocumentFragment();
+
+filtersFragment.appendChild(makeFilter(`#all`, `All movies`, 0, true));
+filtersFragment.appendChild(makeFilter(`#watchlist`, `Watchlist`, 23));
+filtersFragment.appendChild(makeFilter(`#history`, `History`, 222));
+filtersFragment.appendChild(makeFilter(`#favorites`, `Favorites`, 5355));
+filters.insertBefore(filtersFragment, stats);
 
 renderCards(filmCardsContainer, 7);
 renderCards(mostRatedContainer, 2, false, false);
