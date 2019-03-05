@@ -1,5 +1,6 @@
 import makeFilter from './make-filter.js';
 import makeFilmCard from './make-film-card.js';
+import {getCardData} from './data';
 import {getRandomNumber} from './utils';
 
 const filters = document.querySelector(`.main-navigation`);
@@ -13,7 +14,7 @@ const renderCards = (dist, count, hasControls = true, hasDescription = true) => 
   const fragment = new Array(count)
     .fill()
     .reduce((prev) => {
-      prev.appendChild(makeFilmCard(hasControls, hasDescription));
+      prev.appendChild(makeFilmCard(hasControls, hasDescription, getCardData()));
       return prev;
     }, document.createDocumentFragment());
 

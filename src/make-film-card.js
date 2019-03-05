@@ -1,24 +1,21 @@
 import {htmlToDomNode} from './utils';
 
-export default (hasControls, hasDescription) => {
+export default (hasControls, hasDescription, data) => {
   const html = `<article 
     class="${hasControls ? `film-card` : `film-card film-card--no-controls`}">
 
-    <h3 class="film-card__title">The Assassination Of Jessie James By The Coward Robert Ford</h3>
-    <p class="film-card__rating">9.8</p>
+    <h3 class="film-card__title">${data.title}</h3>
+    <p class="film-card__rating">${data.rating}</p>
     <p class="film-card__info">
-      <span class="film-card__year">2018</span>
-      <span class="film-card__duration">1h&nbsp;13m</span>
-      <span class="film-card__genre">Comedy</span>
+      <span class="film-card__year">${data.year}</span>
+      <span class="film-card__duration">${data.duration}</span>
+      <span class="film-card__genre">${data.genre}</span>
     </p>
-    <img src="./images/posters/three-friends.jpg" alt="" class="film-card__poster">
+    <img src="${data.posterSrc}" alt="" class="film-card__poster">
     
-    ${hasDescription ? `<p class="film-card__description">A priest with a haunted past and a novice on the threshold of her final
-     vows are sent by the Vatican to investigate the death of a young nun in Romania 
-     and confront a malevolent force in the form of a demonic nun.
-    </p>` : ``}
+    ${hasDescription ? `<p class="film-card__description">${data.description}</p>` : ``}
     
-    <button class="film-card__comments">13 comments</button>
+    <button class="film-card__comments">${data.commentsCount} comments</button>
   
     ${hasControls ? `<form class="film-card__controls">
       <button class="film-card__controls-item button film-card__controls-item--add-to-watchlist"><!--Add to watchlist--> WL</button>
