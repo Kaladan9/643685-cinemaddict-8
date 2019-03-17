@@ -1,5 +1,5 @@
 import makeFilter from './make-filter.js';
-import FilmCard from './FilmCard.js';
+import FilmCard from './film-card.js';
 import {getCardData} from './data';
 import {getRandomNumber} from './utils';
 

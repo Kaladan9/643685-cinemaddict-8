@@ -1,5 +1,5 @@
 import {htmlToDomNode} from './utils';
-import FilmPopup from './FilmPopup';
+import FilmPopup from './film-popup';
 
 export default class FilmCard {
   constructor(data, hasControls, hasDescription) {
