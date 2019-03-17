@@ -42,7 +42,7 @@ const descriptions = allDescriptionStrings.split(`. `);
 
 const createDescription = (descrArr, minPhraseCount, maxPhraseCount) => {
   const count = getRandomNumber(minPhraseCount, maxPhraseCount);
-  const unusedDescriptions = descriptions.slice();
+  const unusedDescriptions = [...descriptions];
   const resArr = [];
 
   for (let i = 0; i < count; i++) {

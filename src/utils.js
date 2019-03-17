@@ -6,7 +6,7 @@ export function getRandomNumber(min, max, precision = undefined) {
 }
 
 export function htmlToDomNode(html) {
-  const template = document.createElement(`template`);
-  template.innerHTML = html;
-  return template.content;
+  const newElement = document.createElement(`div`);
+  newElement.innerHTML = html;
+  return newElement.firstChild;
 }
